@@ -14,10 +14,11 @@
 # Set the paths to the binaries and how to launch MPI jobs.
 # If you ran ./prepare.sh successfully, then binaries are in ./bin/
 function setup_paths {
-  io500_ior_cmd=$PWD/bin/ior
-  io500_mdtest_cmd=$PWD/bin/mdtest
+  io500_ior_cmd=/home/azureuser/ior/src/ior
+  io500_mdtest_cmd=/home/azureuser/ior/src/mdtest
+  io500_mdreal_cmd=$PWD/bin/md-real-io
   io500_mpirun="mpiexec"
-  io500_mpiargs="-np 2"
+  io500_mpiargs="--hostfile /home/azureuser/hfile -np 16"
 }
 
 # Set directories where benchmark files are created and where the results go.
